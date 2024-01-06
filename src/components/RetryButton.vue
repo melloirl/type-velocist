@@ -11,9 +11,3 @@ export default {
   name: "RetryButton",
 };
 </script>
-
-<style>
-.bg-racer-yellow {
-  background-color: #ffc107;
-}
-</style>
