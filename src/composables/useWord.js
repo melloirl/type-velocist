@@ -1,5 +1,3 @@
-export const useWord = () => {
-  const compareWords = (word1, word2) => {
-    return word1.toLowerCase() === word2.toLowerCase();
-  };
+export const stringifyArray = (array) => {
+  return array.join("");
 };
