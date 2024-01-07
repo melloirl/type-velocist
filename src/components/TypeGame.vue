@@ -1,6 +1,6 @@
 <template>
-  <div class="game-wrapper flex bg-slate-300 rounded-lg">
-    <div class="game-view__text p-4">
+  <div class="game-wrapper flex justify-center bg-slate-300 rounded-lg">
+    <div class="game-view__text p-4 relative">
       <p v-if="!win">
         <span class="bg-green-400">{{ stringifyArray(correctText) }}</span>
         <span class="bg-red-400">{{ stringifyArray(incorrectText) }}</span>
@@ -19,7 +19,10 @@
         <span>
           Your typing speed is <b>{{ cpm }}</b> characters per minute!
         </span>
-        <RetryButton style="display: none"></RetryButton>
+        <RetryButton
+          @click="reset"
+          class="absolute inset-x-0 bottom-0 p-2 m-3"
+        ></RetryButton>
       </p>
     </div>
   </div>
@@ -37,6 +40,7 @@
 <script>
 import TextService from "@/services/TextService";
 import { useHighResTimer, formatNumber } from "@/composables/useTimer";
+import { stringifyArray } from "@/composables/useWord";
 import { Icon } from "@iconify/vue";
 import RetryButton from "@/components/RetryButton.vue";
 import { ref, onMounted } from "vue";
@@ -57,14 +61,29 @@ export default {
     const timer = useHighResTimer();
     const typos = ref(0);
 
+    const initialState = () => {
+      inputText.value = "";
+      targetText.value = [];
+      displayText.value = [];
+      correctText.value = [];
+      incorrectText.value = [];
+      cpm.value = 0;
+      accuracy.value = 0;
+      time.value = 0;
+      win.value = false;
+      typos.value = 0;
+    };
+
+    const reset = async () => {
+      initialState();
+      const text = await TextService.getRandomText();
+      targetText.value = text.split("");
+    };
+
     onMounted(async () => {
       const text = await TextService.getRandomText();
       targetText.value = text.split("");
     });
-
-    const stringifyArray = (array) => {
-      return array.join("");
-    };
 
     const onInput = (e) => {
       // If the timer is not running, start it
@@ -136,6 +155,7 @@ export default {
       targetText,
       inputText,
       formatNumber,
+      reset,
     };
   },
 };

@@ -9,9 +9,9 @@ const routes = [
     component: GameView,
   },
   {
-    path: "/about",
+    path: "/leaderboard",
     meta: { layout: MainLayout },
-    component: () => import("../views/AboutView.vue"),
+    component: () => import("../views/LeaderboardView.vue"),
   },
 ];
 
