@@ -5475,6 +5475,14 @@ pify@^2.3.0:
   resolved "https://registry.yarnpkg.com/pify/-/pify-2.3.0.tgz#ed141a6ac043a849ea588498e7dca8b15330e90c"
   integrity sha512-udgsAY+fTnvv7kI7aaxbqwWNb0AHiB0qBO89PZKPkoTmGOgdbrHDKD+0B2X4uTfJ/FT1R09r9gTsjUjNJotuog==
 
+pinia@^2.1.4:
+  version "2.1.7"
+  resolved "https://registry.yarnpkg.com/pinia/-/pinia-2.1.7.tgz#4cf5420d9324ca00b7b4984d3fbf693222115bbc"
+  integrity sha512-+C2AHFtcFqjPih0zpYuvof37SFxMQ7OEG2zV9jRI12i9BOy3YQVAHwdKtyyc8pDcDyIc33WCIsZaCFWU7WWxGQ==
+  dependencies:
+    "@vue/devtools-api" "^6.5.0"
+    vue-demi ">=0.14.5"
+
 pirates@^4.0.1:
   version "4.0.6"
   resolved "https://registry.yarnpkg.com/pirates/-/pirates-4.0.6.tgz#3018ae32ecfcff6c29ba2267cbf21166ac1f36b9"
@@ -6900,10 +6908,20 @@ vue-cli-plugin-axios@~0.0.4:
   resolved "https://registry.yarnpkg.com/vue-cli-plugin-axios/-/vue-cli-plugin-axios-0.0.4.tgz#29d4eb48275c7fe15b92e1fd5d95fbe2a966436f"
   integrity sha512-p2b/fvPJuPBnvU8027PAAuU5DiOzUn2lku8XLG/f6c8FU0N+/MXWZAlOuHhqd9e7+KIZitwe/c8qlmv7TglbTg==
 
+vue-cli-plugin-pinia@~0.2.4:
+  version "0.2.4"
+  resolved "https://registry.yarnpkg.com/vue-cli-plugin-pinia/-/vue-cli-plugin-pinia-0.2.4.tgz#3ddb8898fe73cee021bbd3cb9b27ac5aaf130429"
+  integrity sha512-ZvY/d66Qr8WACtsZr79Nm/Eed2DSC5bcnyzg0oxYvYXzK0s9732RhJ/11sMDDz+ZTnHxZHM3awlpdC7i4meUFg==
+
 vue-cli-plugin-tailwind@~3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/vue-cli-plugin-tailwind/-/vue-cli-plugin-tailwind-3.0.0.tgz#2436e781e919acab9539934549999baf33e0a099"
   integrity sha512-bUWjfwGtJCeBU7pL4lD86RC+HsJAmAlYqr8e65NGC3q/ZBzC9KQs1Iy/vTyfDTnB7ZJm3huB+1a/m+17fdMZ8A==
+
+vue-demi@>=0.14.5:
+  version "0.14.6"
+  resolved "https://registry.yarnpkg.com/vue-demi/-/vue-demi-0.14.6.tgz#dc706582851dc1cdc17a0054f4fec2eb6df74c92"
+  integrity sha512-8QA7wrYSHKaYgUxDA5ZC24w+eHm3sYCbp0EzcDwKqN3p6HqtTCGR/GVsPyZW92unff4UlcSh++lmqDWN3ZIq4w==
 
 vue-eslint-parser@^8.0.1:
   version "8.3.0"

@@ -44,11 +44,13 @@ import { stringifyArray } from "@/composables/useWord";
 import { Icon } from "@iconify/vue";
 import RetryButton from "@/components/RetryButton.vue";
 import { ref, onMounted } from "vue";
+import { useRankingStore } from "@/store";
 
 export default {
   name: "TypeGame",
   components: { Icon, RetryButton },
   setup() {
+    const store = useRankingStore();
     const inputText = ref("");
     const targetText = ref([]);
     const displayText = ref([]);
@@ -132,12 +134,14 @@ export default {
         timer.stop();
         console.log(timer);
         time.value = timer.getElapsedTime(true);
-        // Consider the time to be in seconds, we divide by 60 to get minutes
         cpm.value = Math.round((targetText.value.length / time.value) * 60);
         accuracy.value = Math.round(
           ((targetText.value.length - typos.value) / targetText.value.length) *
             100
         );
+        // TODO: Create a nicer prompting system
+        let name = prompt("Please enter your name", "Anonymous");
+        store.pushToRanking(name, cpm.value * accuracy.value);
       }
     };
 
