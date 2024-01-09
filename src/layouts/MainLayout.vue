@@ -10,7 +10,7 @@
           <router-link to="/">Home</router-link>
         </li>
         <li class="px-2">
-          <router-link to="/about">About</router-link>
+          <router-link to="/leaderboard">Leaderboard</router-link>
         </li>
       </ul>
     </nav>
